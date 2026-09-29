@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/aralmi/mlops26-hw3",
+  "revision": "80b3225c0f8cde58f4ba2057a342f72d88746a5e",
+  "topic": "Practical pandas questions from Stack Overflow",
+  "license": "CC-BY-SA-4.0",
+  "files": {
+    "train.jsonl": {"records": 1388, "sha256": "0d75504b4bd1dfea39742cfc182a17318bfc53c115fb1d58a851010c0673c37e"},
+    "val.jsonl": {"records": 154, "sha256": "6b5f9dabbe98a16152c39dd20aa17a1d922c6937b1562ec7429a1b9ed3029974"},
+    "attribution.jsonl": {"sha256": "f438b77cc0b97d1b1adf84423296595ae33ac7952f63fd13007c60194ebc9932"}
+  }
+}

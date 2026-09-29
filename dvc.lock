@@ -1,0 +1,78 @@
+schema: '2.0'
+stages:
+  tokenize:
+    cmd: python -m src.tokenize_data
+    deps:
+    - path: data/train.jsonl
+      hash: md5
+      md5: c5ffee3d471024ff0997e8c5cde55e2f
+      size: 3354006
+    - path: data/val.jsonl
+      hash: md5
+      md5: c21bda475c2a90d409a237b915d62fc3
+      size: 354060
+    - path: docs/hw1_bench.json
+      hash: md5
+      md5: a5df96c0ba8f9a7b3ae52ff9bb168516
+      size: 214
+    - path: pyproject.toml
+      hash: md5
+      md5: de10adbc86b02e7875d91d66ad742287
+      size: 497
+    - path: src/collate.py
+      hash: md5
+      md5: 006f42b3b6e6571c3957a34b6efc36e6
+      size: 1880
+    - path: src/config.py
+      hash: md5
+      md5: d1af94455f9641952ff6c34f46ac6060
+      size: 336
+    - path: src/pack.py
+      hash: md5
+      md5: 5dc03dc42add6fbd762a366475bd39a0
+      size: 2808
+    - path: src/prompt.py
+      hash: md5
+      md5: 6cc852457b2ce9b72ef0c16e4fccc0bf
+      size: 4470
+    - path: src/tokenize_data.py
+      hash: md5
+      md5: bd43e4eecdb509f697f28fa3d48bf779
+      size: 17209
+    - path: uv.lock
+      hash: md5
+      md5: 47132d2a2346b2d70dd9b9cd34946fb9
+      size: 514317
+    params:
+      params.yaml:
+        data.out_dir: data/tokenized
+        data.train_jsonl: data/train.jsonl
+        data.val_jsonl: data/val.jsonl
+        model:
+          name: Qwen/Qwen3-0.6B
+          enable_thinking: false
+        packing:
+          enabled: false
+          batch_size: 8
+        tokenize:
+          max_seq_len: 3456
+          truncated_warn_ratio: 0.05
+          padding_side: left
+        train_estimate:
+          epochs: 3
+          tokens_per_sec: 34.93
+          source: docs/hw1_bench.json
+    outs:
+    - path: data/tokenized
+      hash: md5
+      md5: ce5d344c3ae07497e2afe51bd3888e30.dir
+      size: 9175222
+      nfiles: 2
+    - path: docs/tokenize_report.md
+      hash: md5
+      md5: e9f66d1462db4124dc746d9d4830b9e5
+      size: 3542
+    - path: metrics/tokenize.json
+      hash: md5
+      md5: ad4d04ae447852074869ed25907c1039
+      size: 2678
